@@ -1,5 +1,6 @@
 package com.ikeda.sumo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -23,14 +25,14 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -80,20 +82,30 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        //以下にメインメニューボタンが押されたときの動作を定義する。
+        //
+        if (id == R.id.nav_story) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
+            Toast.makeText(this,"相撲物語モード！",Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.nav_torikumi) {
+            Toast.makeText(this,"取り組みモード！",Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this,TorikumiMenuActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_shop) {
+            Toast.makeText(this,"相撲ショップ！",Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+            Toast.makeText(this,"設定！",Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.nav_add) {
+            Toast.makeText(this,"力士追加！",Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.nav_reset) {
+            Toast.makeText(this,"初期化！",Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.nav_online) {
+            Toast.makeText(this,"オンライン参加！",Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.nav_other) {
+            Toast.makeText(this,"その他？！",Toast.LENGTH_SHORT).show();
         }
 
+        //どのボタンが押されてもメインメニューを閉じて、コンテンツビューを表示する。
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

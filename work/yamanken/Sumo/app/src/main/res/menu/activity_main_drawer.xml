@@ -3,15 +3,15 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_story"
             android:icon="@drawable/ic_menu_camera"
             android:title="相撲物語モード" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_torikumi"
             android:icon="@drawable/ic_menu_gallery"
             android:title="取組みモード" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_shop"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="相撲ショップ" />
         <item
@@ -23,7 +23,7 @@
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_add"
                 android:icon="@drawable/ic_menu_send"
                 android:title="追加力士" />
             <item
@@ -31,7 +31,7 @@
                 android:icon="@drawable/ic_menu_manage"
                 android:title="初期化" />
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_online"
                 android:icon="@drawable/ic_menu_share"
                 android:title="オンライン参加" />
             <item
