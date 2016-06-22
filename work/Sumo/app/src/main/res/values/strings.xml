@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Sumo</string>
+    <!-- Tsuchiya 追加　START-->
+    <string name="title_activity_main">はっけよい</string>
+    <string name="title_activity_activity_second">サイコロ</string>
+    <string name="title_activity_activity_third">カットイン</string>
+    <!-- Tsuchiya 追加　END-->
 </resources>
