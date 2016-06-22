@@ -23,6 +23,28 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<!-- tsuchiya  ’Ç‰Á‰ÓŠ  START-->
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                android:label="@string/title_activity_activity_second"
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ActivitySecond"
+            android:label="@string/title_activity_activity_second">
+        </activity>
+        <activity
+            android:name=".ActivityThird"
+            android:label="@string/title_activity_activity_third">
+        </activity>
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+<!-- tsuchiya  ’Ç‰Á‰ÓŠ  END-->
     </application>
 
 </manifest>
