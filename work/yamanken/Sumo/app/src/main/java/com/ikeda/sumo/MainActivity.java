@@ -45,6 +45,19 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
+    public void onPause() {
+        super.onPause();
+        findViewById(R.id.view_main_content).setBackgroundDrawable(null);
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        findViewById(R.id.view_main_content).setBackgroundResource(R.drawable.main);
+    }
+
+    @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -75,6 +88,7 @@ public class MainActivity extends AppCompatActivity
 
         return super.onOptionsItemSelected(item);
     }
+
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
