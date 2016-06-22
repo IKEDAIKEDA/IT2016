@@ -3,6 +3,7 @@ package com.ikeda.sumo;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.speech.tts.Voice;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -29,11 +30,18 @@ public class TorikumiMenuActivity extends AppCompatActivity implements View.OnCl
         Button btnOnline = (Button)findViewById(R.id.btn_online);
         btnOnline.setOnClickListener(this);
         Button btnBack = (Button)findViewById(R.id.btn_back);
-        btnBack.setOnClickListener(this
-        );
+        btnBack.setOnClickListener(this);
 
+    }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+    }
 
+    @Override
+    public void onPause(){
+        super.onPause();
     }
 
     @Override

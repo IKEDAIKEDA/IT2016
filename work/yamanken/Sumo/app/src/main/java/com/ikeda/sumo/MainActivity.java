@@ -87,10 +87,12 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_story) {
             // Handle the camera action
             Toast.makeText(this,"相撲物語モード！",Toast.LENGTH_SHORT).show();
+            Intent monogatari = new Intent(MainActivity.this,KawaigariActivity.class);
+            startActivity(monogatari);
         } else if (id == R.id.nav_torikumi) {
             Toast.makeText(this,"取り組みモード！",Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(MainActivity.this,TorikumiMenuActivity.class);
-            startActivity(intent);
+            Intent torikumi = new Intent(MainActivity.this,TorikumiMenuActivity.class);
+            startActivity(torikumi);
         } else if (id == R.id.nav_shop) {
             Toast.makeText(this,"相撲ショップ！",Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_manage) {
@@ -103,6 +105,8 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(this,"オンライン参加！",Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_other) {
             Toast.makeText(this,"その他？！",Toast.LENGTH_SHORT).show();
+            Intent win = new Intent(MainActivity.this,WinActivity.class);
+            startActivity(win);
         }
 
         //どのボタンが押されてもメインメニューを閉じて、コンテンツビューを表示する。
