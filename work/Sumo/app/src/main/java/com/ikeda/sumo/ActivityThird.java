@@ -35,10 +35,7 @@ public class ActivityThird extends Activity {
                 mHandler.postDelayed(updateText, 100);
 
                 switch (count) {
-                    case 50:
-                        changeImageId = R.drawable.battle;
-                        break;
-                    case 80:
+                    case 20:
                         // 画面遷移する。
                         Intent intent;
                         //インテントを作成し、遷移先のクラスを呼び出す。
