@@ -27,11 +27,6 @@
         <activity
             android:name=".KawaigariActivity"
             android:screenOrientation="landscape" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".TorikumiMenuActivity"
@@ -40,6 +35,18 @@
         <activity
             android:name=".TorikumiActivity"
             android:label="@string/title_activity_torikumi"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ActivityFirst"
+            android:label="ActivityFirst"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ActivitySecond"
+            android:label="ActivitySecond"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ActivityThird"
+            android:label="ActivityThird"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

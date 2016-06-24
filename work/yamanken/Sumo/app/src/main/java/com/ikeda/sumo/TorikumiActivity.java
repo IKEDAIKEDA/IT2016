@@ -1,12 +1,12 @@
 package com.ikeda.sumo;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.ToneGenerator;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.media.RatingCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.ViewGroup;
@@ -27,6 +27,7 @@ public class TorikumiActivity extends AppCompatActivity {
     String put_text = "";
     String put_txt = "今日は○○場所だ！\n頑張るぞ！！";
     int i = 0;
+
 
 
     @Override
@@ -65,7 +66,15 @@ public class TorikumiActivity extends AppCompatActivity {
 
         handler.sendEmptyMessage(TIMEOUT_MESSAGE);
 
+
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+    }
+
      // 文字列を一文字ずつ出力するハンドラ
      //処理の最後で画像切り替え
      private Handler handler = new Handler() {
@@ -84,8 +93,8 @@ public class TorikumiActivity extends AppCompatActivity {
                     balloon.setText(put_text);
                     //Beep音鳴らす
                     toneGenerator.startTone(ToneGenerator.TONE_PROP_BEEP);
-                    //handlerに0.6秒待たせる
-                    handler.sendEmptyMessageDelayed(TIMEOUT_MESSAGE, INTERVAL * 100);
+                    //handlerに0.1秒待たせる
+                    handler.sendEmptyMessageDelayed(TIMEOUT_MESSAGE, INTERVAL * 200);
                     i++;
                 } else {
                     super.dispatchMessage(msg);
@@ -98,16 +107,26 @@ public class TorikumiActivity extends AppCompatActivity {
                     layoutShiai.removeView(balloon);
                     layoutShiai.removeView(charactorImage);
                     ImageView torikumiHyo = new ImageView(TorikumiActivity.this);
-                    torikumiHyo.setBackgroundResource(R.drawable.torikumi);
+                    torikumiHyo.setBackgroundResource(R.drawable.torikumi_hyo);
                     RelativeLayout.LayoutParams layoutParamTorikumihyo = createParam(WC, WC);
                     layoutParamTorikumihyo.addRule(RelativeLayout.CENTER_HORIZONTAL);
                     torikumiHyo.setLayoutParams(layoutParamTorikumihyo);
 
                     layoutShiai.addView(torikumiHyo);
+
+                    handler.sendEmptyMessageDelayed(TIMEOUT_MESSAGE, INTERVAL * 1200);
+                    Intent tuchiya = new Intent(TorikumiActivity.this,ActivityFirst.class);
+                    startActivity(tuchiya);
+
                     i++;
                 } else {
                     super.dispatchMessage(msg);
                 }
+            } else if (i > arr_num) {
+                //土屋さん画面へインテント
+                Intent tuchiya = new Intent(TorikumiActivity.this,ActivityFirst.class);
+                startActivity(tuchiya);
+
             }
         }
      };
