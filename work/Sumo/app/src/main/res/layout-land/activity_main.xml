@@ -4,7 +4,7 @@
     android:id="@+id/imageBack"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/keikobeya"
+    android:background="@drawable/torikumi"
     tools:context="com.ikeda.sumo.MainActivity">
     <ImageView
         android:id="@+id/image_view_2"
