@@ -17,7 +17,7 @@ public class ActivityFirst extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_activity.first);
+        setContentView(R.layout.activity_activity_first);
         //前に表示されている画像。
 //        changeImageView = (ImageView) findViewById(R.id.image_view_2);
 //       changeImageView.setOnClickListener(new ImageViewOnClick());
